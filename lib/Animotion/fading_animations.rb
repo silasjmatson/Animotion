@@ -5,7 +5,7 @@ module Animotion
     end
   end
 
-  def fadein(view, time=1) do
+  def fadein(view, time=1)
     animate time do
       view.alpha = 1
     end
