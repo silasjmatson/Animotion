@@ -1,18 +1,18 @@
 module Animotion
-  def fadeout(view, time=1, opts={})
+  def fade_out(time=1, opts={})
     animate time do
-      view.alpha = 0
+      self.alpha = 0
     end
     if opts[:remove] && opts[:remove] == true
       run_after time do
-        view.removeFromSuperview  
+        self.removeFromSuperview  
       end 
     end
   end
 
-  def fadein(view, time=1)
+  def fade_in(time=1)
     animate time do
-      view.alpha = 1
+      self.alpha = 1
     end
   end
 
@@ -25,5 +25,19 @@ module Animotion
                                             selector: "call:",
                                             userInfo: nil,
                                             repeats: false)
+  end
+
+  def fade_to(opacity, time=1)
+    animate time do
+      self.alpha = opacity
+    end
+  end
+
+  def fade_toggle(time=1)
+    opacity ||= 0
+    opacity = 1 if self.opacity == 0
+    animate time do
+      self.alpha = opacity
+    end
   end
 end
