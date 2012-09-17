@@ -16,17 +16,6 @@ module Animotion
     end
   end
 
-  # Taken from bubblewrap
-  # https://github.com/rubymotion/BubbleWrap
-  # https://github.com/rubymotion/BubbleWrap/blob/master/motion/core/app.rb lines 60-66 as of 9-17-12
-  def run_after(delay, &block)
-    NSTimer.scheduledTimerWithTimeInterval( delay,
-                                            target: block,
-                                            selector: "call:",
-                                            userInfo: nil,
-                                            repeats: false)
-  end
-
   def fade_to(opacity, time=1)
     animate time do
       self.alpha = opacity
@@ -34,8 +23,8 @@ module Animotion
   end
 
   def fade_toggle(time=1)
-    opacity ||= 0
-    opacity = 1 if self.opacity == 0
+    opacity = 1 - self.alpha
+
     animate time do
       self.alpha = opacity
     end
