@@ -23,10 +23,8 @@ module Animotion
   end
 
   def fade_toggle(time=1)
-    opacity = 1 - self.alpha
-
     animate time do
-      self.alpha = opacity
+      self.alpha = 1 - self.alpha
     end
   end
 end
