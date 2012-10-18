@@ -1,6 +1,8 @@
 # Animotion
 
-A RubyMotion wrapper for common UIView animations. We imagine something similar to jQuery animations (i.e. 'fadein', 'fadeout').
+A RubyMotion wrapper for common UIView animations. Imagine something similar to jQuery animations (i.e. 'fadein', 'fadeout').
+
+I don't really have time to be updating this gem right now, so pull requests are welcome.
 
 ## Installation
 
